@@ -1,0 +1,406 @@
+Q. 1. What is ElasticSearch?
+Ans:  Elasticsearch is a modern, distributed, and analytics search engine that is based or built on Apache Lucene.
+
+Q. What is Lucene Query ?
+Ans: Lucene is a query language that you can use to search for specific messages.
+
+Q. 2. What are the advantages of ElasticSearch?
+Ans:  
+    * Elasticsearch is a fast search engine.
+	* Elasticsearch is a distributed search engine.
+	* Elasticsearch provides a wide range of features.
+	* Data ingestion, visualization, and reporting are simplified with the Elastic Stack or BELEK
+	
+Q. 3. What is ElasticSearch used for?
+Ans:  
+
+	Elasticsearch's speed and scalability as well as its ability to index different types of data make it ideal for a number of use cases. 
+	
+	In addition to its high scalability, Elasticsearch also offers near-real-time search capabilities. All this adds up to a solution that offers much more than a search engine and supports many operational and critical business use cases. 
+	
+	Since Elasticsearch has powerful search capabilities, it is typically the underlying technology for applications requiring complex search requirements. Listed below are some of the use cases of ElasticSearch:
+
+	Application search, Enterprise search, and Website search.
+	
+	Analyzing log data in near-real-time and on a scalable basis.
+	
+	Business analytics and security analytics.
+	
+	Analysis and visualization of geospatial data.
+	
+	Monitoring the performance of applications.
+	
+	Monitoring infrastructure metrics and containers.
+
+Q. 4. How does ElasticSearch work?
+Ans: 
+
+	The Working of ElasticSearch is summarized as follows:
+
+	Firstly, raw data is gathered from a variety of sources, such as log files, system metrics, or web applications. 
+	
+	Beats are lightweight data shipping agents (data shippers) that collect different types of data and forward it to Logstash.
+	
+	This raw data is normalized, analyzed, and enriched prior to being indexed in Elasticsearch. 
+	
+	Logstash performs several transformations and enhancements, and then sends the data to be indexed in Elasticsearch.
+	
+	As soon as the data has been indexed in Elasticsearch, then users can run queries against it, and then aggregate it to generate insights. 
+	
+	ElasticSearch enables you to store, search, and analyze vast or huge amounts of data in near real-time, providing results in milliseconds.
+	
+	Lastly, from Kibana, users can create powerful visualizations of data, and visualize complex queries through interactive diagrams, geospatial data, and graphs.
+
+Q. 5. Can you please list out different ElasticSearch data types for the document fields?
+Ans: 
+
+Field types (also called field data types) describe the type of information or data a field contains, such as a string or boolean, and its intended use. The following are some data types for document fields:
+
+Common data types:
+
+	Binary: A binary value that is encoded as a Base64 string.
+	Boolean: A true or false value.
+	Keywords: The keyword family, which includes the keyword, constant keyword, and wildcard.
+	Numbers: Numeric types such as long, double, float, bytes, integer, etc.
+	Dates: Date types, such as date_nano, date.
+	Alias: Represents the alias of an existing field.
+	
+Objects and relational types:
+
+	Object: Represent a JSON object.
+	Nested: A JSON object that maintains a relationship between its subfields.
+	Flattened: An entire JSON object represented by a single field value.\
+	Join: Establishes a parent/child relationship between documents within an index.
+	
+Structured and Spatial data types:
+
+	Range: Range types, like date_range, long_range, float_range, double_range, and IP_range.
+	Point: Arbitrary cartesian points.
+	Geo_point: Longitude and latitude points
+	Shape: Arbitrary cartesian geometries.
+	Geo_shape: Complex shapes like polygons.
+
+Q. 6. What is ElasticSearch Mapping?
+Ans:
+
+This defines the types and formats of the fields that appear in the documents.
+
+Types of mapping
+
+	Static mapping: 
+	
+		Users perform static mappings when they create an index. 
+		We use static mappings to define data types and indexes. 
+		It is easy to define fields and their types when creating an index.
+
+	Dynamic mapping: 
+
+		Elasticsearch automatically creates dynamic mappings for the tables. 
+		
+		The dynamic mapping of Elasticsearch comes in handy when we need to store extra attributes on documents. 
+		
+		Like : We have multiple device as mobile, keypad phone, STB, web.
+		there different different action, search, click data. so we want to save this data.this type of scenario we are use Dynamic mapping.
+		
+		but we are creating Dynamic Home page or Any import data so we are use Static mapping.
+		
+		It is not always necessary to configure field names and types when indexing documents, as these will be created automatically by Elasticsearch based on any predefined rules.
+
+Q. 7. What is ElasticSearch fuzzy search?
+Ans:
+you can find documents with terms similar to your search term.
+The fuzzy query generates a list of all possible variations and expansions of the search term. 
+After that, the query returns a list of all possible matches. 
+The most relevant and exact matches appear near the top of the list.
+
+Q. 8. What is cluster in ElasticSearch?
+Ans:
+
+A cluster is a collection of connected nodes. 
+
+If you run only one instance or node of Elasticsearch, 
+then you have a single-node cluster or a cluster of one node. 
+
+Clusters automatically reorganize themselves 
+when nodes join or leave 
+so the data is distributed evenly among all the nodes. 
+
+Despite being fully functional, 
+
+the cluster is at risk of data loss if it fails.
+
+Q. 9. Explain a node in Elastic Search.
+Ans:
+You can think of a node as a single server that forms part of your cluster. 
+
+Nodes are assigned roles that describe their responsibilities and operations.
+
+By default, every cluster node can handle HTTP and transport traffic.
+
+Communication between nodes is carried out via the transport layer, while REST clients utilize the HTTP layer.
+
+Q. 10. Explain what is a document in ElasticSearch.
+Ans:
+
+The term "document" refers to a unit of information that can be indexed.
+Each index within Elasticsearch contains multiple documents. 
+These documents are written in JavaScript Object Notation (JSON).
+Documents are composed of fields, and each field has its own type of data. 
+In a particular index, you can store as many documents as you wish.
+
+Q. 11. Which operations can you perform on a document?
+Ans:
+Elasticsearch allows the following operations to be performed over documents:
+
+	Indexing a document
+	Fetching documents
+	Updating documents
+	Deleting documents
+	
+Q. 12. What is an index in ElasticSearch?
+Ans:
+An index is a collection of documents
+	
+Q. 13. Define the terms Shard and Replica in ElasticSearch.
+Ans:
+Shard:  
+      Elasticsearch crashes are often caused by large indexes.
+	  
+	  Due to the unlimited number of documents that can be stored on each index,
+	  
+	  an index may consume more disk space than the hosting server can provide.
+	  
+	  Indexing will begin to fail as soon as the index reaches this limit.
+	  
+	  As a solution to this problem, it is possible to divide or segment indexes horizontally into multiple pieces, also called shards.
+	
+	  For an index, you can easily specify how many shards you want.
+	  
+	  As a result, every shard is its own, fully functional, and independent "index", which can run on any node in a cluster.
+	  
+Replica:
+	
+	As the name implies, replicas are Elasticsearch fail-safe mechanisms, and are essentially copies of an index's shards. 
+	
+	As a backup, this could come in handy when a node crashes. 
+	
+	Furthermore, replicas can serve read requests, which is useful for increasing search performance. 
+	
+	To ensure high availability, replicas must not be placed on the same node as the original shard (called the "primary shared") from which they were replicated.
+	
+Q. 14. What is the process of deleting an index in Elasticsearch?
+Ans:
+Deleting an index removes all of its shards, documents, and metadata. 
+
+command to delete an index in Elasticsearch:
+DELETE /<index_name>
+
+Example: To delete an index named my-index-321, 
+command.
+        DELETE /my-index-321
+
+Q. 15. How to add a mapping to an index?
+Ans:
+Elasticsearch lets you add the mapping to an index based on the data provided by the user in the request body. 
+The following syntax can be used to add a mapping to an index:
+
+POST /_<index_name>/_type/_id
+
+Q. 16. What do you mean by the term ‘type’ in ElasticSearch?
+Ans:
+	Elasticsearch clusters can consist of multiple Indices (databases), each of which contains several Types (tables). 
+	A type holds multiple Documents (rows), and every document has some Properties (columns). 
+	By using types, multiple data types can be stored in the same index, thus reducing the total number of indices.
+
+Q. 17. What do you mean by NRT (Near Real-Time Search) in ElasticSearch?
+Ans:
+    Elasticsearch provides near real-time search functionality. 
+	It means that there is a slight delay (approximately one second) between the time you index a document and the moment it becomes searchable.
+
+ElasticSearch Interview Questions for Experienced
+
+Q. 18. Explain Tokenizer in ElasticSearch.
+Ans:
+    When a tokenizer receives a stream of characters (text), 
+	it tokenizes them (usually by breaking them up into individual words or tokens), 
+	and outputs the stream of words/tokens. 
+	
+	Elasticsearch comes with several tokenizers that you can use to build your custom analyzers. A whitespace tokenizer, for example, breaks text into individual tokens whenever it encounters any whitespace. The text "Scaler by InterviewBit!" would be converted into terms or tokens.
+	
+Q. 19. What is an Analyzer ElasticSearch?
+Ans:
+    When indexing data in ElasticSearch, the data is internally transformed by the Analyzer assigned to the index. In essence, an analyzer indicates how text should be indexed and searched in ElasticSearch. Elasticsearch comes with several ready-to-use analyzers built into it. You can also create custom analyzers by combining the built-in character filters, tokenizers, and token filters.
+
+	Character filter: 
+		Used to remove unused characters or change some characters.
+		
+	Tokenizer: 
+		Divides or breaks text into tokens (or words) based on some criteria (e.g. whitespace).
+		
+	Token filter: 
+		The filter receives tokens and applies filters to them (such as changing uppercase terms into lowercase).
+
+Q. 20. What is an Inverted index in ElasticSearch?
+Ans:
+	ElasticSearch utilizes a hashmap-like data structure known as an inverted index that allows for rapid full-text searches. 
+	The inverted index lists all the unique words that appear in one or more documents and identifies all the documents those words appear in. 
+	With it, you can conduct quick searches across millions of documents to find relevant data.
+	
+	Example: Let's assume we have two different documents:
+
+			Scaler is a good Ed-tech company.
+			InterviewBit is one of the good companies.
+
+Q. 21. Describe the functionality of the cat API in ElasticSearch.
+Ans:
+
+Q. 22. What are the different ElasticSearch commands available in the cat API?
+Ans:
+
+Q. 23. Explain ELK stack and its architecture.
+Ans:
+
+	The "ELK" acronym refers to three open-source products i.e., Elasticsearch, Logstash, and Kibana, which are all produced, managed, and maintained by Elastic company. With the introduction of Beats, this stack became a four-legged project called BELK or Elastic Stack.
+
+	ElasticSearch: 
+		Elasticsearch is an open-source, modern, full-text search engine based or built on Apache Lucene. 
+		ElasticSearch enables you to store, search, and analyze vast or huge amounts of data in near real-time, providing results in milliseconds.
+	
+	Logstash: 
+		Logstash is a data processing pipeline tool, 
+		which collects data from different sources, 
+		performs several transformations and enhancements, 
+		and then sends the data to stash or wherever you want it to go. 
+	
+	Kibana: 
+		Kibana is a visualization tool built on top of Elasticsearch, 
+		enabling users to analyze and view data. 
+		The Kibana dashboard lets you visualize complex queries through interactive diagrams, geospatial data, and graphs.
+	
+	Beats: 
+		Beats are lightweight data shipping agents (data shippers) that collect different types of data and forward it to Logstash or ElasticSearch. 
+		There are different types of Beats, each focused on a specific type of data, such as metrics, log files, network packets, audit data, Windows events, uptime monitoring data, and cloud data.
+
+	These components are typically used in conjunction to monitor, troubleshoot, and secure IT environments. 
+	The Beats and Logstash tools handle the collection and processing of data, while Elasticsearch stores and indexes the data, and 
+	Kibana provides a graphical UI (user interface) for querying and visualizing the data.
+
+Q. 24. What configuration management tools does Elasticsearch support?
+Ans:
+	Elasticsearch supports the following configuration management tools:
+
+		Chef: cookbook-elastic search.
+		Puppet: puppet-elastic search.
+		Ansible: ansible-elastic search.
+
+Q. 25. Is it necessary to install X-Pack for Elasticsearch? What are some essential X-pack commands?
+Ans:
+
+	Yes, if you are using ElasticSearch, you must install X-Pack. 
+	
+	In essence, X-Pack is an Elastic Stack extension that combines or bundles alerting, reporting, monitoring, security, and graph capabilities into a single package that can be installed quickly and easily. 
+	
+	Although the components of the X-Pack work seamlessly together, you can enable or disable the features you need.
+	
+	Since X-Pack is an Elastic Stack extension, you will need to install both Elasticsearch and Kibana before installing X-Pack. 
+	
+	The version of X-Pack must match Elasticsearch and Kibana versions.
+
+	The following are a few X-Pack commands that can help you configure security and perform other tasks:
+
+		elasticsearch-certgen
+		elasticsearch-certutil
+		elasticsearch-reset-password
+		elasticsearch-setup-passwords
+		elasticsearch-syskeygen
+		elasticsearch-users, etc.
+
+Q. 26. What do you mean by aggregation in ElasticSearch?
+Ans:
+
+	Aggregations in Elasticsearch enable you to group data and calculate statistics on your data with a simple search query. In ElasticSearch, aggregations are categorized into three types:
+	
+	Bucket aggregations: 
+		Documents can be grouped into buckets by using bucket aggregations. 
+		You can use them to create data buckets or group data. 
+		A bucket can be formed based on existing field values, ranges, etc.
+		
+	Metric aggregations: 
+		This aggregation helps to calculate metrics (such as a sum, or average) based on field values.
+		
+	Pipeline aggregations: 
+		This type of aggregation takes inputs from the output results of other aggregates rather than individual documents or fields.
+
+Q. 27. Does ElasticSearch have a schema?
+Ans:
+	Yes, it is possible for ElasticSearch to have a schema. 
+	
+	The schema is a description of one or more fields in a document that describe what type of document it is and how different fields of a document are to be handled.
+	
+	In Elasticsearch, a schema describes the fields in JSON documents, their data types, and how they should be indexed in the Lucene indexes. 
+	
+	As such, we call this schema a "mapping" in Elasticsearch.ch.
+
+	But Elasticsearch can also be schema-less, meaning that documents can be indexed without the need to provide a schema explicitly.  
+	
+	If a mapping isn't specified, Elasticsearch will by default generate one when newly added fields are detected during indexing
+	
+Q. 28. How can we perform a search in Elasticsearch?
+Ans:
+
+	Below are a few ways to perform a search in Elasticsearch:
+
+	Applying search API: 
+		You can search and aggregate data that is stored in Elasticsearch data streams and indices using the search API.
+	
+	Search using a URI (Uniform Resource Identifier): 
+		The search request is executed using a URI (Uniform Resource Identifier) by providing request parameters.
+	
+	Request body search: 
+		The search request should be executed using DSL (Domain Specific Language) within the bod
+		
+Q. 29. Explain Query DSL in ElasticSearch.
+Ans:
+	Elasticsearch generally provides a query Domain Specific Language (DSL) based on JSON to define queries. Query DSL contains two kinds of clauses:
+
+	Leaf query clause: 
+		A leaf query clause looks for specific values in a field or fields. They can be used independently. Matches, terms, and range queries are some examples of these queries.
+
+	Compound query clause: 
+		A compound query clause is a combination of a leaf query and other compound queries. These queries combine multiple queries to produce their intended results.
+
+	The behaviour of query clauses differs depending on whether it is used in a filter context or a query context.
+
+Q. 30. What types of queries does ElasticSearch support?
+Ans:
+
+	Elasticsearch supports a wide range of queries. The query begins with a query keyword, which is followed by conditions and filters in the form of a JSON object. Here are a few of the queries:
+
+	Match All Query: 
+		This is a basic query that retrieves all the documents in the specified index.
+	
+	Full-text queries: 
+		There are high-level queries for executing full-text searches over full-text fields. Full-text queries usually work depending on the analyzer associated with a particular document or index. Full-text queries can be of different types, such as match query, multi-match query, query-string query, etc.
+		
+	Term Level Queries: 
+		Instead of full-text field searches, term-level queries deal with structured data like numbers, enums, dates, etc. Term level queries can be of different types, such as range, exists, prefix, wildcard, fuzzy, type, etc.
+
+Q. 31. How to use in python Project ?
+Ans:
+
+1. pip install elasticsearch
+2. from elasticsearch import Elasticsearch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
